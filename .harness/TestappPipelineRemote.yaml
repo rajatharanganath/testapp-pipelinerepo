@@ -33,4 +33,23 @@ pipeline:
                                         echo <+codebase.targetBranch>
                                         echo <+codebase.sourceBranch>
                                         echo <+codebase.repoUrl>
-                                        echo 358pm
+                                        echo 402pm
+        - stage:
+              name: stg2
+              identifier: stg2
+              type: CI
+              spec:
+                  cloneCodebase: false
+                  infrastructure:
+                      useFromStage: stg1
+                  execution:
+                      steps:
+                          - step:
+                                type: Run
+                                name: step2
+                                identifier: step2
+                                spec:
+                                    connectorRef: account.harnessImage
+                                    image: alpine
+                                    shell: Sh
+                                    command: echo stage2-612pm
