@@ -10,7 +10,7 @@ pipeline:
               identifier: stg1
               type: CI
               spec:
-                  cloneCodebase: false
+                  cloneCodebase: true
                   infrastructure:
                       type: KubernetesDirect
                       spec:
@@ -34,3 +34,8 @@ pipeline:
                                         echo <+codebase.sourceBranch>
                                         echo <+codebase.repoUrl>
                                         echo 358pm
+    properties:
+        ci:
+            codebase:
+                connectorRef: testappcode
+                build: <+input>
