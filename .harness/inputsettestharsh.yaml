@@ -9,7 +9,7 @@ inputSet:
       ci:
         codebase:
           build:
-            type: "branch"
+            type: "branchinvalid"
             spec:
               branch: "main"
     stages:
