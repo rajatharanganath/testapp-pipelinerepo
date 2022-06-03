@@ -1,0 +1,38 @@
+pipeline:
+    name: RemotePipeline2June2022
+    identifier: RemotePipeline2June2022
+    projectIdentifier: RajathaTest
+    orgIdentifier: default
+    storeType: REMOTE
+    remoteType: create
+    tags: {}
+    properties:
+        ci:
+            codebase:
+                connectorRef: GitHubRajathaAppRepo
+                build: <+input>
+    stages:
+        - stage:
+              name: stg1
+              identifier: stg1
+              type: CI
+              spec:
+                  cloneCodebase: true
+                  infrastructure:
+                      type: KubernetesDirect
+                      spec:
+                          connectorRef: account.CItestK8sConnectorV3kTzyr2rs
+                          namespace: harness-qa-delegate
+                          automountServiceAccountToken: true
+                          nodeSelector: {}
+                  execution:
+                      steps:
+                          - step:
+                                type: Run
+                                name: step1
+                                identifier: step1
+                                spec:
+                                    connectorRef: account.CItestDockerConnectorWUZAszsnYC
+                                    image: alpine
+                                    shell: Sh
+                                    command: <+input>
