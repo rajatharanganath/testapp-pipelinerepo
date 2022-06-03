@@ -1,0 +1,32 @@
+inputSet:
+  identifier: "inputset1"
+  name: "inputset1"
+  orgIdentifier: "default"
+  projectIdentifier: "RajathaTest"
+  pipeline:
+    identifier: "TNHUTrigger1"
+    properties:
+      ci:
+        codebase:
+          build:
+            type: "branch"
+            spec:
+              branch: "dev1"
+    stages:
+    - stage:
+        identifier: "Build"
+        type: "CI"
+        spec:
+          infrastructure:
+            type: "KubernetesDirect"
+            spec:
+              connectorRef: "account.CItestK8sConnector8Jk0wfloX5"
+              namespace: "default1"
+          execution:
+            steps:
+            - step:
+                identifier: "Run"
+                type: "Run"
+                spec:
+                  connectorRef: "account.harnessImage"
+                  image: "nginx"
