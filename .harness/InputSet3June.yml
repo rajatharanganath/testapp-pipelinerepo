@@ -23,4 +23,4 @@ inputSet:
                 identifier: "step1"
                 type: "Run"
                 spec:
-                  command: "echo \"First output change\""
+                  command: "echo \"First output change2sfsadf\""
