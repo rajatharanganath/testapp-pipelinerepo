@@ -1,0 +1,38 @@
+pipeline:
+    name: RemotePipeline3June
+    identifier: RemotePipeline3June
+    projectIdentifier: RajathaTest
+    orgIdentifier: default
+    storeType: REMOTE
+    remoteType: create
+    tags: {}
+    properties:
+        ci:
+            codebase:
+                connectorRef: GitHubRajatha
+                build: <+input>
+    stages:
+        - stage:
+              name: stg1
+              identifier: stg1
+              type: CI
+              spec:
+                  cloneCodebase: true
+                  infrastructure:
+                      type: KubernetesDirect
+                      spec:
+                          connectorRef: account.CItestK8sConnectoryg7d1MipIx
+                          namespace: harness-qa-delegate
+                          automountServiceAccountToken: true
+                          nodeSelector: {}
+                  execution:
+                      steps:
+                          - step:
+                                type: Run
+                                name: step1
+                                identifier: step1
+                                spec:
+                                    connectorRef: account.CItestDockerConnectorV2fKLnZNlQ
+                                    image: alpine
+                                    shell: Sh
+                                    command: <+input>
