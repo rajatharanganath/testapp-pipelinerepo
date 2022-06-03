@@ -36,3 +36,22 @@ pipeline:
                                     image: alpine
                                     shell: Sh
                                     command: <+input>
+        - stage:
+              name: stg2
+              identifier: stg2
+              type: CI
+              spec:
+                  cloneCodebase: true
+                  infrastructure:
+                      useFromStage: stg1
+                  execution:
+                      steps:
+                          - step:
+                                type: Run
+                                name: Step2
+                                identifier: Step2
+                                spec:
+                                    connectorRef: account.CItestDockerConnectorWUZAszsnYC
+                                    image: alpine
+                                    shell: Sh
+                                    command: echo "step2"
