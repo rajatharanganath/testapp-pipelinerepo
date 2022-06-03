@@ -9,7 +9,7 @@ inputSet:
       ci:
         codebase:
           build:
-            type: "branch"
+            type: "hjfd"
             spec:
               branch: "main"
     stages:
