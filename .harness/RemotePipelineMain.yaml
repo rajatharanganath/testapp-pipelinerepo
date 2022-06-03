@@ -54,4 +54,4 @@ pipeline:
                                     connectorRef: account.CItestDockerConnectorV2fKLnZNlQ
                                     image: alpine
                                     shell: Sh
-                                    command: run "test-step2"
+                                    command: echo "test-step2"
