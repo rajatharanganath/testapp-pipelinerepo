@@ -1,0 +1,26 @@
+inputSet:
+  identifier: "InputSet3June"
+  name: "InputSet3June"
+  orgIdentifier: "default"
+  projectIdentifier: "RajathaTest"
+  pipeline:
+    identifier: "RemotePipeline3June"
+    properties:
+      ci:
+        codebase:
+          build:
+            type: "branch"
+            spec:
+              branch: "main"
+    stages:
+    - stage:
+        identifier: "stg1"
+        type: "CI"
+        spec:
+          execution:
+            steps:
+            - step:
+                identifier: "step1"
+                type: "Run"
+                spec:
+                  command: "echo \"First output\""
