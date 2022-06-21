@@ -1,0 +1,26 @@
+inputSet:
+  identifier: "dsfdsfdg"
+  name: "dsfdsfdg"
+  orgIdentifier: "default"
+  projectIdentifier: "RajathaTest"
+  pipeline:
+    identifier: "sadfdsf"
+    properties:
+      ci:
+        codebase:
+          build:
+            type: "PR"
+            spec:
+              number: "<+trigger.prNumber>"
+    stages:
+    - stage:
+        identifier: "safddsf"
+        type: "CI"
+        spec:
+          execution:
+            steps:
+            - step:
+                identifier: "zxcvxzv"
+                type: "Run"
+                spec:
+                  command: "zxvcxzcv"
