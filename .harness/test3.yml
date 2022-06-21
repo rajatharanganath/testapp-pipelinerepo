@@ -1,0 +1,14 @@
+inputSet:
+  identifier: "test3"
+  name: "test3"
+  orgIdentifier: "default"
+  projectIdentifier: "RajathaTest"
+  pipeline:
+    identifier: "RemotePipeline2June2022"
+    properties:
+      ci:
+        codebase:
+          build:
+            type: "branch"
+            spec:
+              branch: "<+trigger.branch>"
