@@ -1,0 +1,46 @@
+pipeline:
+    name: sadfdsf
+    identifier: sadfdsf
+    projectIdentifier: RajathaTest
+    orgIdentifier: default
+    tags: {}
+    properties:
+        ci:
+            codebase:
+                connectorRef: GitHubRajatha
+                build: <+input>
+    stages:
+        - stage:
+              name: safddsf
+              identifier: safddsf
+              type: CI
+              spec:
+                  cloneCodebase: true
+                  infrastructure:
+                      type: KubernetesDirect
+                      spec:
+                          connectorRef: account.CItestK8sConnectorgjCxzubHye
+                          namespace: zxfczxc
+                          automountServiceAccountToken: true
+                          nodeSelector: {}
+                          os: Linux
+                  execution:
+                      steps:
+                          - step:
+                                type: BuildAndPushDockerRegistry
+                                name: zxcxzc
+                                identifier: zxcxzc
+                                spec:
+                                    connectorRef: account.testDockerConnectorjvBYBoPZnb
+                                    repo: xzcxzc
+                                    tags:
+                                        - xzCxzc
+                          - step:
+                                type: Run
+                                name: zxcvxzv
+                                identifier: zxcvxzv
+                                spec:
+                                    connectorRef: account.testDockerConnectorjvBYBoPZnb
+                                    image: alpine
+                                    shell: Sh
+                                    command: <+input>
