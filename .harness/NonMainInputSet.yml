@@ -1,0 +1,26 @@
+inputSet:
+  identifier: "NonMainInputSet"
+  name: "NonMainInputSet"
+  orgIdentifier: "default"
+  projectIdentifier: "RajathaTest"
+  pipeline:
+    identifier: "NonMainPipeline"
+    properties:
+      ci:
+        codebase:
+          build:
+            type: "branch"
+            spec:
+              branch: "<+trigger.branch>"
+    stages:
+    - stage:
+        identifier: "adxas"
+        type: "CI"
+        spec:
+          execution:
+            steps:
+            - step:
+                identifier: "asdfsdf"
+                type: "Run"
+                spec:
+                  command: "echo \"NonMainInputSet\""
